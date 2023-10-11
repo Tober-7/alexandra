@@ -1,0 +1,4 @@
+AuthType Basic 
+AuthName "Si hoden?" 
+AuthUserFile .htpasswd 
+require valid-user

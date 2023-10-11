@@ -297,7 +297,7 @@
 }
 
 .container-section-1-img{
-	min-width: 50px;
+	min-width: 75px;
   max-width: 150px;
 	min-height: 50px;
   max-height: 150px;
