@@ -281,14 +281,16 @@
   &.between{
     flex-direction: column;
     justify-content: space-between;
+
+		max-width: 150px;
+		width: 100%;
   }
   &.text{
     justify-content: center;
 
     flex-wrap: wrap;
 
-		max-width: 926px;
-
+		padding: 0 64px;
     margin: 0 64px;
 
     column-gap: 80px;
@@ -303,6 +305,8 @@
   max-height: 150px;
 	width: 100%;
 	height: 100%;
+
+	margin: 24px 0;
 
   &:nth-child(1) {
     rotate: 5deg;
