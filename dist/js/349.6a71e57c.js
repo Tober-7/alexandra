@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkalexandra"]=self["webpackChunkalexandra"]||[]).push([[349],{2349:function(n,r,a){a.r(r),a.d(r,{default:function(){return f}});var e=a(3396);function u(n,r){return(0,e.wg)(),(0,e.iD)("div")}var t=a(89);const c={},d=(0,t.Z)(c,[["render",u]]);var f=d}}]);
-//# sourceMappingURL=349.6a71e57c.js.map
