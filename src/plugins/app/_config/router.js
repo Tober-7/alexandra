@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router"
 
 const routes = [
 	{
-		path: 'asd',
+		path: '',
 		name: 'Main',
 		component: () => import('@/plugins/lib@alexandra/alexandra-main/alexandra-main.vue')
 	},
