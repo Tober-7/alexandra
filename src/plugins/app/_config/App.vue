@@ -1,50 +1,6 @@
 <template>
-  <div class="container baseDarkColor shadowBottom">
-		<span class="container-child header">
-			<div class="header-left">
-				<img class="logo" src="@/assets/pictures/logo.png">
-				<div class="header-buttons">
-          <span class="text margin">|</span>
-          <span class="text small header-button" id="header-button--categories">Kategórie</span>
-          <div class="header-buttons hover">
-            <span class="text small button" @click="scroll('Adjectives')">Vlastnosti</span>
-            <hr>
-            <span class="text small button" @click="scroll('Smile')">Ôsmy div sveta</span>
-            <hr>
-            <span class="text small button" @click="scroll('Builder')">Alexandra the builder</span>
-            <hr>
-            <span class="text small button" @click="scroll('Eyes')">Krásne očká</span>
-            <hr>
-            <span class="text small button" @click="scroll('Crazy')">Krejzy</span>
-            <hr>
-            <span class="text small button" @click="scroll('Stylish')">Stylish</span>
-            <hr>
-            <span class="text small button" @click="scroll('Birthday')">Všetko najlepšie!</span>
-          </div>
-				</div>
-			</div>
-			<span class="text small dark button" @click="secret(0.5, $event)">najlepšia žena</span>
-		</span>
-	</div>
   <router-view></router-view>
 </template>
-
-<script>
-export default {
-  methods: {
-    scroll(target) {
-      document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-    },
-    secret(timeout, event) {
-      event.target.textContent = "láskujem ťa <3"
-      setTimeout(function () {
-        event.target.textContent = "najlepšia žena"
-      }, timeout * 1000);
-    },
-  },
-}
-
-</script>
 
 <style>
 
@@ -300,155 +256,45 @@ img, span {
 
 /*#endregion*/
 
-/*#region Hearts*/
+/*#region Input*/
 
-.container-hearts{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.input{
+  width: 100%;
 
-  position: absolute;
+  padding: 12px 0;
 
-  width: 0;
-  height: 100%;
+  border: none;
+  background-color: transparent;
+
+  border-bottom: solid 1px var(--darkMidColor);
+
+  color: var(--darkMidColor);
+
+  font-family: "Croissant-One", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 1);
+
+  transition: var(--transitionLength);
 }
 
-.container-hearts-img{
-  object-fit: contain;
+.input:hover{
+  border-bottom: solid 1px var(--baseLightColor);
 
+  transition: var(--transitionLength);
+}
+
+.input:focus{
+  outline: none;
+}
+
+.input::placeholder{
+  transition: var(--transitionLength);
+}
+
+.input:focus::placeholder{
   opacity: 0;
-
-  animation: hearts infinite var(--heartsAnimLength);
-
-  &:nth-child(1){
-    width: 175px;
-    height: 175px;
-
-    margin: 128px 0 0 125px;
-
-    rotate: 15deg;
-
-    animation-delay: var(--heartsAnimDelay);
-  }
-  &:nth-child(2){
-    width: 200px;
-    height: 200px;
-
-    margin: 0 225px 0 0;
-    
-    rotate: -10deg;
-
-    animation-delay: 0s;
-  }
-  &:nth-child(3){
-    width: 175px;
-    height: 175px;
-
-    margin: 0 0 0 175px;
-    
-    rotate: 25deg;
-
-    animation-delay: calc(var(--heartsAnimDelay) * 2);
-  }
-}
-
-@keyframes hearts{
-  0%{
-    opacity: 0;
-  }
-  50%{
-    opacity: 0.1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-
-/*#endregion*/
-
-/*#region Header*/
-
-.logo{
-  width: 25px;
-  height: 25px;
-}
-
-.header-left{
-  display: flex;
-  align-items: center;
-
-  height: 100%;
-
-  padding: 0;
-  margin: 0;
-}
-
-.header-buttons{
-  display: flex;
-  align-items: center;
-
-  height: 100%;
-
-  &.hover{
-    pointer-events: none;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    
-    position: absolute;
-
-    left: 0;
-    top: 100%;
-
-    height: auto;
-
-    padding: 16px;
-
-    opacity: 0;
-
-    border: solid 3px rgba(0, 0, 0, 0.125);
-    border-top: 0;
-    border-radius: 0 0 15px 15px;
-    background-color: var(--baseDarkColor);
-
-    transform: translate(145px, 0);
-
-    transition: var(--transitionLength);
-  }
-}
-
-.header-buttons.hover > *{
-  pointer-events: none;
-}
-
-.header-buttons.hover:hover{
-  pointer-events: all;
-
-  opacity: 1;
-
-  transition: var(--transitionLength);
-}
-
-.header-buttons.hover:hover > *{
-  pointer-events: all;
-}
-
-.header-button{
-  pointer-events: all;
-
-  height: 100%;
-
-  margin: 0 16px;
-}
-
-#header-button--categories:hover ~ .header-buttons.hover{
-  pointer-events: all;
-
-  opacity: 1;
-
-  transition: var(--transitionLength);
 }
 
 /*#endregion*/
