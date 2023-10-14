@@ -26,17 +26,10 @@
 			<span class="text small dark button" @click="secret(0.5, $event)">najlepšia žena</span>
 		</span>
 	</div>
-	<bd-2023></bd-2023>
 </template>
 
 <script>
-import Bd2023 from "@/plugins/lib@alexandra/alexandra-bd-2023/alexandra-bd-2023.vue"
-
 export default {
-	components: {
-		Bd2023,
-	},
-
 	methods: {
 		scroll(target) {
 			document.getElementById(target).scrollIntoView({ behavior: 'smooth' });

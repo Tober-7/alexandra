@@ -2,6 +2,14 @@
   <router-view></router-view>
 </template>
 
+<script>
+export default {
+  async created() {
+    this.$router.replace({ name: "Login"})
+  },
+}
+</script>
+
 <style>
 
 /*#region Fonts*/
@@ -165,6 +173,12 @@ img, span {
   &.between{
     justify-content: space-between;
   }
+  &.center{
+    width: 100%;
+    height: 100vh;
+
+    padding: 0;
+  }
 
   &.header{
     justify-content: space-between;
@@ -262,6 +276,8 @@ img, span {
   width: 100%;
 
   padding: 12px 0;
+
+  width: 500px;
 
   border: none;
   background-color: transparent;
