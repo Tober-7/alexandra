@@ -27,6 +27,7 @@ export default {
   --baseDarkColor: #202020;
   --darkDarkColor: #181818;
   --lightDarkColor: #242424;
+  --brightDarkColor: #323232;
   
   --baseLightColor: #D0D0D0;
   --darkLightColor: #E0E0E0;
@@ -46,10 +47,13 @@ export default {
 
 /*#region Type Selectors*/
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 html, body{
   max-width: 100%;
-  overflow-x: hidden;
-  overflow: visible;
 
   transition: none;
 
@@ -75,6 +79,10 @@ header, body{
   border-radius: 15px;
 
   background: var(--lightDarkColor) padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brightDarkColor) padding-box;
 }
 
 hr{
@@ -153,6 +161,30 @@ img, span {
   &:nth-child(8){
     z-index: 93;
   }
+  &:nth-child(9){
+    z-index: 92;
+  }
+  &:nth-child(10){
+    z-index: 91;
+  }
+  &:nth-child(11){
+    z-index: 90;
+  }
+  &:nth-child(12){
+    z-index: 89;
+  }
+  &:nth-child(13){
+    z-index: 88;
+  }
+  &:nth-child(14){
+    z-index: 87;
+  }
+  &:nth-child(15){
+    z-index: 86;
+  }
+  &:nth-child(16){
+    z-index: 85;
+  }
 }
 
 .container-child{
@@ -170,6 +202,9 @@ img, span {
     flex-direction: column;
   }
 
+  &.left{
+    justify-content: flex-start;
+  }
   &.between{
     justify-content: space-between;
   }
@@ -216,6 +251,10 @@ img, span {
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.75);
 }
 
+.subheader-category{
+  margin: 0 16px;
+}
+
 /*#endregion*/
 
 /*#region Text*/
@@ -228,7 +267,6 @@ img, span {
   cursor: default;
 
   padding: 0;
-  margin: 0;
 
   color: var(--baseLightColor);
 
@@ -244,26 +282,37 @@ img, span {
   &.small{
     font-size: 12px;
   }
+  &.large{
+    font-size: 28px;
+  }
   &.title{
     font-size: 40px;
+  }
+  &.title2{
+    font-size: 56px;
   }
 
   &.dark{
     color: var(--darkMidColor);
   }
 
+  &.cursor{
+    cursor: pointer;
+  }
   &.button{
     pointer-events: all;
-    cursor: pointer;
   }
 
   &.margin{
     margin: 0 16px 0 32px;
   }
+  &.margin2{
+    margin: 0 64px;
+  }
 }
 
 .text:hover{
-  &.button{
+  &.cursor{
     color: var(--baseRed);
   }
 }

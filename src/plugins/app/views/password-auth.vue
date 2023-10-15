@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import app from "@/plugins/app/_config/main.js"
+import globalProperties from "@/plugins/app/_config/main.js"
 import CryptoJS from "crypto-js"
 
 export default {
@@ -20,7 +20,7 @@ export default {
 		return {
 			input: "",
       password: "7065746b6f6a65676f64",
-      passcode: "123#$%",
+      passcode: "",
 		}
 	},
 
@@ -28,11 +28,13 @@ export default {
     tryPassword() {
       if (!this.input.length) return;
 
+      this.passcode = CryptoJS.lib.WordArray.random(16).words[Math.floor(Math.random() * 4)].toString();
+
       const encrypted = CryptoJS.AES.encrypt(this.input, this.passcode).toString();
       const decrypted = CryptoJS.AES.decrypt(encrypted, this.passcode).toString();
 
       if (decrypted === this.password) {
-        app.config.globalProperties.$isAuthenticated = true;
+        globalProperties.$isAuthenticated = true;
 
         this.pushToRoute("Main");
       }
@@ -41,7 +43,7 @@ export default {
     },
 
     pushToRoute(s) {
-        this.$router.push({ name: s});
+        this.$router.push({ name: s });
     },
   },
 }

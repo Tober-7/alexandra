@@ -1,21 +1,28 @@
 <template>
+	<div class="container baseDarkColor shadowBottom">
+		<div class="container-child left">
+			<span class="text small cursor button subheader-category" @click="scroll('Adjectives')">Úžasná vlastnosti</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Smile')">Ôsmy div sveta</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Builder')">Alexandra the builder</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Eyes')">Krásne očká</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Crazy')">Krejzy</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Stylish')">Stylish Alexandra</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Birthday')">Všetko najlepšie!</span>
+		</div>
+	</div>
 	<div class="container lightDarkColor shadowBottom">
 		<span class="container-child column">
 			<hr>
-			<span class="text title">~ Alexandra Jankovičová ~</span>
-			<span class="text small dark">aka Anakin Skywalker</span>
-			<hr class="margin2">
-			<span class="text">
-				Nie je žiadnym tajomstvom, že Alexandra Jankovičová je proste úžasná osoba.<br>
-				Ale ak vám to ešte nedošlo, dovoľte mi, aby som vám vysvetlil prečo.
-			</span>
-			<hr class="borderBottom">
+			<span class="text large">Narodeniny 2023</span>
+			<hr>
 		</span>
 	</div>
-	<div class="container baseDarkColor shadowBottom" id="Adjectives">
+	<div class="container baseDarkColor shadowBottom" ref="Adjectives">
 		<span class="container-child column">
 			<hr>
-			<span class="text title">je jednoducho...</span>
+			<span class="text dark title">~ Alexandra Jankovičová ~</span>
+			<hr>
+			<span class="text title">je jednoducho:</span>
 			<hr class="margin3">
 			<div class="container-hearts">
 				<img class="container-hearts-img" src="@/assets/pictures/heart.png">
@@ -40,7 +47,7 @@
 			<hr class="margin2">
 		</span>
 	</div>
-	<div class="container lightDarkColor shadowBottom" id="Smile">
+	<div class="container lightDarkColor shadowBottom" ref="Smile">
 		<span class="container-child column">
 			<hr>
 			<span class="text title">~ Ôsmy div sveta ~</span>
@@ -63,7 +70,7 @@
 			<hr class="margin2">
 		</span>
 	</div>
-	<div class="container baseDarkColor shadowBottom" id="Builder">
+	<div class="container baseDarkColor shadowBottom" ref="Builder">
 		<span class="container-child between">
 			<span class="container-section column padding">
 				<span class="text title">~ Alexandra the builder ~</span>
@@ -79,7 +86,7 @@
 			<img class="container-section-3-img img-frame" src="@/assets/pictures/14.jpg">
 		</span>
 	</div>
-	<div class="container lightDarkColor shadowBottom" id="Eyes">
+	<div class="container lightDarkColor shadowBottom" ref="Eyes">
 		<span class="container-child column">
 			<hr>
 			<span class="text title">~ Krásne očká ~</span>
@@ -104,7 +111,7 @@
 			<hr class="margin2">
 		</span>
 	</div>
-	<div class="container baseDarkColor shadowBottom" id="Crazy">
+	<div class="container baseDarkColor shadowBottom" ref="Crazy">
 		<span class="container-child between">
 			<img class="container-section-5-img img-frame" src="@/assets/pictures/24.jpg">
 			<img class="container-section-5-img img-frame" src="@/assets/pictures/23.jpg">
@@ -114,7 +121,7 @@
 			</span>
 		</span>
 	</div>
-	<div class="container lightDarkColor shadowBottom" id="Stylish">
+	<div class="container lightDarkColor shadowBottom" ref="Stylish">
 		<span class="container-child column">
 			<hr>
 			<span class="text title">~ Stylish Alexandra ~</span>
@@ -151,11 +158,12 @@
 			<hr class="margin2">
 		</span>
 	</div>
-	<div class="container baseDarkColor shadowBottom" id="Birthday">
+	<div class="container baseDarkColor shadowBottom" ref="Birthday">
 		<span class="container-child column">
 			<hr>
 			<span class="text title">Všetko najlepšie!</span>
 			<hr class="borderBottom">
+			<hr>
 			<span class="text">
 				Moja milá Saška,<br>
 				prajem ti len to najlepšie v živote. Nech ostaneš taká skvelá akú ťa poznám a akú ťa mám rád.<br>
@@ -180,95 +188,101 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				adjectives: [
-					"rozumná",
-					"krásna",
-					"inteligentná",
-					"humorná",
-					"akademická zbraň",
-					"slay",
-					"trpezlivá",
-					"prívetivá",
-					"zlatučká",
-					"spisovateľka",
-					"nádherná",
-					"fancy",
-					"empatická",
-					"baby girl",
-					"kultúrne založená",
-					"goofy",
-					"pobožná",
-					"validná",
-					"skromná",
-					"turistka",
-					"sebavedomá",
-					"stylish",
-					"baletka",
-					"verná",
-					"cute",
-					"slušná",
-					"sympatická",
-					"silly",
-					"vzdelaná",
-					"vzorná",
-					"quirky",
-					"nenáročná",
-					"samostatná",
-					"smash",
-					"oddaná",
-					"lovely",
-					"vychovaná",
-					"fashionable",
-					"gorgeous",
-					"stunning",
-					"pozorná",
-					"úžasná",
-					"pôvabná",
-					"múdra",
-					"ohľaduplná",
-					"zodpovedná",
-					"vyspelá",
-					"cool",
-					"small & petite",
-					"zásadová",
-					"epická",
-					"vtipná",
-					"škorpión",
-					"spanilá",
-					"sexy ;)",
-					"skvelá",
-					"cmuk",
-					"dejepisná expertka",
-					"fešná",
-					"úprimná",
-					"zaujímavá",
-					"dream girlfriend",
-					"fantastická",
-					"dreamy",
-					"gamer girl",
-					"magická",
-					"krejzy",
-					"atraktívna",
-					"švárna dievčina",
-					"mentally stable",
-					"dobrá osoba",
-					"slejózna",
-					"čistá fantázia",
-					"ohromujúca",
-					"prekrásna",
-					"veľkolepá",
-					"spevácky nadaná",
-					"prenádherná",
-					"čarovná",
-					"milujúca",
-					"proste perfektná",
-				],
-			}
+export default {
+	data() {
+		return {
+			adjectives: [
+				"rozumná",
+				"krásna",
+				"inteligentná",
+				"humorná",
+				"akademická zbraň",
+				"slay",
+				"trpezlivá",
+				"prívetivá",
+				"zlatučká",
+				"spisovateľka",
+				"nádherná",
+				"fancy",
+				"empatická",
+				"baby girl",
+				"kultúrne založená",
+				"goofy",
+				"pobožná",
+				"validná",
+				"skromná",
+				"turistka",
+				"sebavedomá",
+				"stylish",
+				"baletka",
+				"verná",
+				"cute",
+				"slušná",
+				"sympatická",
+				"silly",
+				"vzdelaná",
+				"vzorná",
+				"quirky",
+				"nenáročná",
+				"samostatná",
+				"smash",
+				"oddaná",
+				"lovely",
+				"vychovaná",
+				"fashionable",
+				"gorgeous",
+				"stunning",
+				"pozorná",
+				"úžasná",
+				"pôvabná",
+				"múdra",
+				"ohľaduplná",
+				"zodpovedná",
+				"vyspelá",
+				"cool",
+				"small & petite",
+				"zásadová",
+				"epická",
+				"vtipná",
+				"škorpión",
+				"spanilá",
+				"sexy ;)",
+				"skvelá",
+				"cmuk",
+				"dejepisná expertka",
+				"fešná",
+				"úprimná",
+				"zaujímavá",
+				"dream girlfriend",
+				"fantastická",
+				"dreamy",
+				"gamer girl",
+				"magická",
+				"krejzy",
+				"atraktívna",
+				"švárna dievčina",
+				"mentally stable",
+				"dobrá osoba",
+				"slejózna",
+				"čistá fantázia",
+				"ohromujúca",
+				"prekrásna",
+				"veľkolepá",
+				"spevácky nadaná",
+				"prenádherná",
+				"čarovná",
+				"milujúca",
+				"proste perfektná",
+			],
+		}
+	},
+
+	methods: {
+		scroll(target) {
+			this.$refs[target].scrollIntoView({ behavior: 'smooth' });
 		},
-	}
+	},
+}
 </script>
 
 <style scoped>
@@ -282,7 +296,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-		max-width: 150px;
+		max-width: 175px;
 		width: 100%;
   }
   &.text{
@@ -290,8 +304,11 @@
 
     flex-wrap: wrap;
 
-		padding: 0 64px;
-    margin: 0 64px;
+		min-width: 476px;
+		max-width: calc(calc(100vw - 150px) - 24px - 350px - 64px - 64px);
+
+		padding: 0 32px;
+    margin: 0 32px;
 
     column-gap: 80px;
     row-gap: 16px;
@@ -300,9 +317,9 @@
 
 .container-section-1-img{
 	min-width: 75px;
-  max-width: 150px;
-	min-height: 50px;
-  max-height: 150px;
+  max-width: 175px;
+	min-height: 175px;
+  max-height: 175px;
 	width: 100%;
 	height: 100%;
 
@@ -325,9 +342,9 @@
 
 .container-section-2-img{
 	min-width: 50px;
-  max-width: 140px;
-	min-height: 140px;
-  max-height: 140px;
+  max-width: 150px;
+	min-height: 150px;
+  max-height: 150px;
 	width: 100%;
 	height: 100%;
 
@@ -363,8 +380,8 @@
 
 .container-section-3-img{
 	min-width: 200px;
-  max-width: 300px;
-	min-height: 300px;
+  max-width: 350px;
+	min-height: 350px;
 
 	width: 100%;
 	height: 100%;
@@ -378,9 +395,9 @@
 
 .container-section-4-img{
 	min-width: 50px;
-  max-width: 140px;
-	min-height: 140px;
-  max-height: 140px;
+  max-width: 150px;
+	min-height: 150px;
+  max-height: 150px;
 	width: 100%;
 	height: 100%;
 
@@ -412,10 +429,10 @@
 /*#region Section 5*/
 
 .container-section-5-img{
-	min-width: 300px;
-  max-width: 300px;
-	min-height: 300px;
-	max-height: 300px;
+	min-width: 350px;
+  max-width: 350px;
+	min-height: 350px;
+	max-height: 350px;
 	width: 100%;
 	height: 100%;
 
@@ -433,7 +450,7 @@
 
 		margin: 0;
 
-		transform: translate(325px, 50px);
+		transform: translate(375px, 75px);
 	}
 	&:nth-child(3){
 		position: absolute;
@@ -447,7 +464,7 @@
 
 		margin: 0;
 
-		transform: translate(425px, -100px);
+		transform: translate(500px, -75px);
 	}
 }
 
@@ -468,7 +485,7 @@
 
 .container-section-6-img{
 	min-width: 25px;
-  max-width: 200px;
+  max-width: 225px;
 	min-height: 400px;
 	max-height: 400px;
 	width: 100%;
@@ -523,7 +540,7 @@
     width: 175px;
     height: 175px;
 
-    margin: 128px 0 0 125px;
+    margin: 175px 0 0 125px;
 
     rotate: 15deg;
 

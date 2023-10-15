@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import app from "./main.js"
+import globalProperties from "./main.js"
 
 const routes = [
 	{
@@ -26,10 +26,10 @@ const router = createRouter({
 
 router.beforeEach((to) => {
 	if (to.meta.requiresAuth === true) {
-		if (!app.config.globalProperties.$isAuthenticated) return false;
+		if (!globalProperties.$isAuthenticated) return false;
 	} else {
-		if (to.name === "NotFound") return { name: "Main" }
-		if (to.name === "Login" && app.config.globalProperties.$isAuthenticated) return false;
+		if (to.name === "NotFound") return { name: "Main" };
+		if (to.name === "Login" && globalProperties.$isAuthenticated) return false;
 	}
 })
 

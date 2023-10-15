@@ -7,4 +7,4 @@ app.config.globalProperties.$isAuthenticated = false;
 	
 app.use(router).mount('#app');
 
-export default app;
+export default app.config.globalProperties;
