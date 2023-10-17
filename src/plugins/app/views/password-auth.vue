@@ -7,6 +7,8 @@
                 <input v-model="input" type="password" autocomplete="off" placeholder="vložte tajné heslo" @keyup.enter="tryPassword" class="input">
             </form>
             <hr class="margin3">
+            <span class="text cursor button" @click="tryPassword">Potvrdiť</span>
+            <hr class="margin3">
         </div>
     </div>
 </template>
