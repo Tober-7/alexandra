@@ -165,7 +165,7 @@
 			<hr class="borderBottom">
 			<hr>
 			<span class="text">
-				Moja milá Saška,<br>
+				Moja drahá Saška,<br>
 				prajem ti len to najlepšie v živote. Nech ostaneš taká skvelá akú ťa poznám a akú ťa mám rád.<br>
 				Nech sa ti darí vo všetkom čomu sa venuješ a nech nikdy nezabudneš, ako moc stojíš za to a ako moc si ťa vážim.<br>
 				Týmto darčekom som ti chcel ukázať, čo všetko na tebe ľúbim, aj keď to zďaleka nie je všetko.<br>
@@ -173,7 +173,7 @@
 			</span>
 			<hr class="margin2">
 			<span class="text">
-				Ľúbim ťa!
+				Láskujem ťa!
 			</span>
 			<hr class="margin3">
 			<span class="text small">
@@ -224,7 +224,6 @@ export default {
 				"vzorná",
 				"quirky",
 				"nenáročná",
-				"samostatná",
 				"smash",
 				"oddaná",
 				"lovely",
@@ -243,6 +242,7 @@ export default {
 				"small & petite",
 				"zásadová",
 				"epická",
+				"buby",
 				"vtipná",
 				"škorpión",
 				"spanilá",
@@ -255,6 +255,7 @@ export default {
 				"zaujímavá",
 				"dream girlfriend",
 				"fantastická",
+				"internet addict",
 				"dreamy",
 				"gamer girl",
 				"magická",
