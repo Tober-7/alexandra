@@ -1,7 +1,7 @@
 <template>
 	<div class="container baseDarkColor shadowBottom">
 		<div class="container-child left">
-			<span class="text small cursor button subheader-category" @click="scroll('Adjectives')">Úžasná vlastnosti</span>
+			<span class="text small cursor button subheader-category" @click="scroll('Adjectives')">Úžasné vlastnosti</span>
 			<span class="text small cursor button subheader-category" @click="scroll('Smile')">Ôsmy div sveta</span>
 			<span class="text small cursor button subheader-category" @click="scroll('Builder')">Alexandra the builder</span>
 			<span class="text small cursor button subheader-category" @click="scroll('Eyes')">Krásne očká</span>
@@ -273,7 +273,7 @@ export default {
 				"prenádherná",
 				"čarovná",
 				"milujúca",
-				"proste perfektná",
+				"proste perfektná <3",
 			],
 		}
 	},
