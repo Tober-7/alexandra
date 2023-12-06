@@ -36,7 +36,7 @@ export default {
 
                 this.$toast.success("Welcome!");
                 
-                return Helpers.goTo(this.$router, "Home");
+                return Helpers.replaceRoute(this.$router, "Home");
             }
             
             this.$toast.error("Wrong Password");

@@ -15,14 +15,14 @@ const routes = [
 		meta: { requiresAuth: true },
 	},
 	{
+		path: '/:catchAll(.*)',
+		name: 'NotFound',
+	},
+	{
 		path: '/bd2023',
 		name: 'Bd2023',
 		component: () => import('@/plugins/app@alexandra/bd/alexandra-bd-2023.vue'),
 		meta: { requiresAuth: true },
-	},
-	{
-		path: '/:catchAll(.*)',
-		name: 'NotFound',
 	},
 ]
 
@@ -31,15 +31,20 @@ const router = createRouter({
 	routes: routes,
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to, from, next) => {
+	console.log(from, to);
 	if (to.meta.requiresAuth === true) {
-		if (!Helpers.isAuth()) return { name: "Auth" };
+		if (!Helpers.isAuth()) next({ name: "Auth" });
+		else next();
 	} else {
-        if (to.name === "NotFound") {
-			if (!Helpers.isAuth()) return { name: 'Auth' };
-			else return { name: 'Home' };
+		if (to.name === "NotFound") {
+			if (!Helpers.isAuth()) next({ name: "Auth" });
+			else next({ name: "Home"} );
 		}  
-		if (to.name === "Auth" && Helpers.isAuth()) return { name: from.name || "Home" };
+		else if (to.name === "Auth") {
+			if (Helpers.isAuth()) next({ name: "Home" });
+			else next();
+		}
 	}
 })
 

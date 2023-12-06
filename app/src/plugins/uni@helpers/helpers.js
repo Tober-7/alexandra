@@ -1,7 +1,10 @@
 import bcrypt from "bcryptjs";
 
 export default class Helpers {
-    static goTo(router, name) {
+    static replaceRoute(router, name) {
+        router.replace({ name });
+    }
+    static pushRoute(router, name) {
         router.push({ name });
     }
 
