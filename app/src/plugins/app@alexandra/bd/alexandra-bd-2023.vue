@@ -23,7 +23,7 @@
                     <img src="@/assets/images/bd/2023/0/2.jpg" class="min-w-[50px] h-[50px] sm:min-w-[75px] sm:h-[75px] md:min-w-[100px] md:h-[100px] lg:min-w-[125px] lg:h-[125px] xl:min-w-[175px] xl:h-[175px] 2xl:min-w-[175px] 2xl:h-[175px] rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200 rotate-[4deg]">
                 </div>
                 <div class="flex justify-center flex-wrap gap-x-2 gap-y-1 sm:gap-x-6 sm:gap-y-2 md:gap-x-8 md:gap-y-3 lg:gap-x-10 lg:gap-y-4 xl:gap-x-12 xl:gap-y-5 2xl:gap-x-20 2xl:gap-y-6 px-4 sm:px-7 md:px-10 lg:px-13 xl:px-16">
-                    <span v-for="(_, index) in t.bd2023.ref0.adjectives" :key="index" class="text-font text-grey-500 text-[6px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[17px] 2xl:text-lg">{{ $t('bd2023.ref0.adjectives.' + index) }}</span>
+                    <span v-for="(_, index) in t.bd2023.ref0.adjectives" :key="index" class="text-font text-light-500 text-[6px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[17px] 2xl:text-lg">{{ $t('bd2023.ref0.adjectives.' + index) }}</span>
                 </div>
                 <div class="flex flex-col justify-between items-center h-full">
                     <img src="@/assets/images/bd/2023/0/3.jpg" class="min-w-[50px] h-[50px] sm:min-w-[75px] sm:h-[75px] md:min-w-[100px] md:h-[100px] lg:min-w-[125px] lg:h-[125px] xl:min-w-[175px] xl:h-[175px] 2xl:min-w-[175px] 2xl:h-[175px] rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200 rotate-[-4deg]">
@@ -43,7 +43,7 @@
 
             <hr class="w-full my-3 sm:my-4 md:my-6 lg:my-8 xl:my-10 border-l border-grey-1000">
 
-            <span v-for="line in splitLines($t('bd2023.ref1.text'))" :key="line" class="text-font text-center text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
+            <span v-for="line in splitLines($t('bd2023.ref1.text'))" :key="line" class="text-font text-center text-light-500 sm:text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
                 {{ line }}<br/>
             </span>
 
@@ -72,7 +72,7 @@
         
                     <hr class="w-full my-3 sm:my-4 md:my-6 lg:my-8 xl:my-10 border-l border-grey-1000">
         
-                    <span v-for="line in splitLines($t('bd2023.ref2.text'))" :key="line" class="text-font text-center text-grey-500 text-[6px] sm:text-[8px] md:text-[12px] lg:text-[16px] xl:text-xl">
+                    <span v-for="line in splitLines($t('bd2023.ref2.text'))" :key="line" class="text-font text-center text-light-500 sm:text-grey-500 text-[6px] sm:text-[8px] md:text-[12px] lg:text-[16px] xl:text-xl">
                         {{ line }}<br/>
                     </span>
                 </div>
@@ -95,7 +95,7 @@
 
             <hr class="w-full my-3 sm:my-4 md:my-6 lg:my-8 xl:my-10 border-l border-grey-1000">
 
-            <span v-for="line in splitLines($t('bd2023.ref3.text'))" :key="line" class="text-font text-center text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
+            <span v-for="line in splitLines($t('bd2023.ref3.text'))" :key="line" class="text-font text-center text-light-500 sm:text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
                 {{ line }}<br/>
             </span>
 
@@ -141,7 +141,7 @@
 
             <hr class="w-full my-3 sm:my-4 md:my-6 lg:my-8 xl:my-10 border-l border-grey-1000">
 
-            <span v-for="line in splitLines($t('bd2023.ref5.text'))" :key="line" class="text-font text-center text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
+            <span v-for="line in splitLines($t('bd2023.ref5.text'))" :key="line" class="text-font text-center text-light-500 sm:text-grey-500 text-[6px] sm:text-sm md:text-base lg:text-lg xl:text-xl">
                 {{ line }}<br/>
             </span>
 
