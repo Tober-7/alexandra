@@ -1,0 +1,157 @@
+{
+    "auth": {
+        "password": "Len pre vyvolených",
+        "placeholder": "tajné heslo...",
+        "submit": "Potvrdiť"
+    },
+    "header": {
+        "birthdays": "Narodeniny",
+        "valentines": "Valentíny",
+        "anniversaries": "Výročia",
+
+        "secretHidden": "Najlepšia žena",
+        "secretVisible": "Láskujem ťa <3" 
+    },
+    "home": {
+        "home": "Domov",
+        "name": "~ Alexandra Jankovičová ~",
+        "title": "aka Anakin Skywalker",
+        "text": "Nie je žiadnym tajomstvom, že Alexandra Jankovičová je proste úžasná osoba. \n Ale ak vám to ale ešte nedošlo, dovoľte mi, aby som vám vysvetlil prečo...",
+
+        "birthday": "Narodeniny",
+        "valentine": "Valentín",
+        "anniversary": "Výročie"
+    },
+
+    "bd2023": {
+        "refs": [
+            "Úžasné vlastnosti",
+            "Ôsmy div sveta",
+            "Alexandra the builder",
+            "Krásne očká",
+            "Krejzy",
+            "Stylisch Alexandra",
+            "Všetko najlepšie!"
+        ],
+        "ref0": {
+            "title": "je jednoducho:",
+            "adjectives": [
+                "rozumná",
+				"krásna",
+				"inteligentná",
+				"humorná",
+				"akademická zbraň",
+				"slay",
+				"trpezlivá",
+				"prívetivá",
+				"zlatučká",
+				"spisovateľka",
+				"nádherná",
+				"fancy",
+				"empatická",
+				"baby girl",
+				"kultúrne založená",
+				"goofy",
+				"pobožná",
+				"validná",
+				"skromná",
+				"turistka",
+				"sebavedomá",
+				"stylish",
+				"baletka",
+				"verná",
+				"cute",
+				"slušná",
+				"sympatická",
+				"silly",
+				"vzdelaná",
+				"vzorná",
+				"quirky",
+				"nenáročná",
+				"smash",
+				"oddaná",
+				"lovely",
+				"vychovaná",
+				"fashionable",
+				"gorgeous",
+				"stunning",
+				"pozorná",
+				"úžasná",
+				"pôvabná",
+				"múdra",
+				"ohľaduplná",
+				"zodpovedná",
+				"vyspelá",
+				"cool",
+				"small & petite",
+				"zásadová",
+				"epická",
+				"buby",
+				"vtipná",
+				"škorpión",
+				"spanilá",
+				"sexy ;)",
+				"skvelá",
+				"cmuk",
+				"dejepisná expertka",
+				"fešná",
+				"úprimná",
+				"zaujímavá",
+				"dream girlfriend",
+				"fantastická",
+				"internet addict",
+				"dreamy",
+				"gamer girl",
+				"magická",
+				"krejzy",
+				"atraktívna",
+				"švárna dievčina",
+				"mentally stable",
+				"dobrá osoba",
+				"slejózna",
+				"čistá fantázia",
+				"ohromujúca",
+				"prekrásna",
+				"veľkolepá",
+				"spevácky nadaná",
+				"prenádherná",
+				"čarovná",
+				"milujúca",
+				"proste perfektná <3"
+            ]
+        },
+        "ref1": {
+            "title": "~ Ôsmy div sveta ~",
+            "text": "Ak by divov sveta nebolo 7, ale 8, ten ôsmy by určite bol úsmev Alexandri Jankovičovej. \n Tento úsmev je známy pre svoje liečivé účinky v oblasti psychológie a zdravotníctva. Ak budete mať šťastie, tak niekedy možno uvidíte tento objektívne nádherný úsmev naživo."
+        },
+        "ref2": {
+            "title": "~ Alexandra the builder ~",
+            "text": "Mali ste už niekedy blbý deň? Zlú náladu? Pravdepodobne áno. Našťastie je tu pre nás Alexandra the builder, ktorá opraví hocičo, vrátane vašej nálady. Stačí byť v jej blízkosti a vaša nálada sa rapídne zlepší. Aj ak je váš problém hlbší ako zlá nálada, stačí sa ozvať Alexandre. Keďže vyštudovala vysokú školu života a empatie, určite vám dobre poradí a budete sa cítiť lepšie. Odporúča 9/10 terapeutov."
+        },
+        "ref3": {
+            "title": "~ Krásne očká ~",
+            "text": "Niektorí ľudia roky študujú na vysokých školách, aby sa naučili profesionálne fotiť. Alexandra sa ale s touto zručnosťou narodila a od vtedy ju využíva, aby zachytila perfekciu svojich očí. Čo je ale hlavné pri jej tvorbe je určite uhol. Ako môžete vidieť, pod správnym uhlom môže krása jej očí nádherne vyniknúť, Alexandra vám to určite sama potvrdí. Ale myslím si, že obrázky hovoria sami za seba."
+        },
+        "ref4": {
+            "title": "~ Krejzy ~",
+            "text": "~ Alexandra ~"
+        },
+        "ref5": {
+            "title": "~ Stylish Alexandra ~",
+            "text": "Ako svetoznáma modelka, Alexandra vie ako sa správne obliecť. Pomocou svojich módnych schopností sa dokáže pripraviť na hocijakú príležitosť. Mnohí odborníci ju považujú za priekopníčku módy 21. storočia. Ale presvedčte sa sami...",
+            "style": [
+                "Alexandra v divadle",
+                "Bread",
+                "Alexandra v roku 1900",
+                "Alexandra na stanovačke",
+                "Alexandra ako Barbie"
+            ]
+        },
+        "ref6": {
+            "title": "~ Všetko najlepšie! ~",
+            "text": "Moja drahá Saška, \n prajem ti len to najlepšie v živote. Nech ostaneš taká skvelá akú ťa poznám a akú ťa mám rád. \n Nech sa ti darí vo všetkom čomu sa venuješ a nech nikdy nezabudneš, ako moc stojíš za to a ako moc si ťa vážim. \n\n Týmto darčekom som ti chcel ukázať, čo všetko na tebe ľúbim, aj keď to zďaleka nie je všetko. \n Tak dúfam, že na to naozaj nikdy nezabudneš, všetko najlepšie ešte raz, cmuk.",
+            "love": "Láskujem ťa!",
+            "btw": "A ak by ťa to náhodou zaujímalo, tak s touto stránkou som ešte určite neskončil ;)"
+        }
+    }
+}
