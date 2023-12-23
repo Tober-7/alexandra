@@ -1,7 +1,7 @@
 <template>
     <div class="flex bg-dark-300">
         <div class="flex justify-start items-center relative w-full px-[24px] sm:px-[32px] md:px-[34px] lg:px-[36px] xl:px-[38px] bg-dark-500 shadow-bottom z-[99] rounded-b-2xl border-b border-dark-200">
-            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.birthday") }} {{ year }}</span>
+            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.birthday") }} - {{ year }}</span>
         </div>
     </div>
     <div class="flex bg-dark-600">

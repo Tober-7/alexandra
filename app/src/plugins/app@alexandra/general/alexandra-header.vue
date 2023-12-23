@@ -16,6 +16,16 @@
                             <button @click="pushRoute('Bd2023')" class="text-font text-light-500 hover:text-red-600 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px] transition">2023</button>
                         </div>
                     </span>
+
+                    <div class="mx-4"></div>
+                    <div class="w-2 h-2 border border-grey-500 rounded-full"></div>
+                    <div class="mx-4"></div>
+    
+                    <span id="header-category--2" class="header-category flex h-full items-center relative text-font text-light-500 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px]">{{ $t("header.christmas") }}
+                        <div id="header-categories--2" class="header-categories-list flex flex-col justify-start items-center absolute left-[0] top-[100%] w-full h-auto px-5 py-4 opacity-0 hover:opacity-100 rounded-b-2xl border-b border-l border-r border-dark-200 bg-dark-600 transition">
+                            <button @click="pushRoute('Ch2023')" class="text-font text-light-500 hover:text-red-600 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px] transition">2023</button>
+                        </div>
+                    </span>
                 </template>
             </div>
             <div class="flex items-center h-full">
@@ -90,6 +100,12 @@ export default {
 }
 
 #header-category--1:hover #header-categories--1{
+  pointer-events: all;
+
+  opacity: 1;
+}
+
+#header-category--2:hover #header-categories--2{
   pointer-events: all;
 
   opacity: 1;

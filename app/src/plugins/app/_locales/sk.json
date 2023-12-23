@@ -6,6 +6,7 @@
     },
     "header": {
         "birthdays": "Narodeniny",
+		"christmas": "Vianoce",
         "valentines": "Valentíny",
         "anniversaries": "Výročia",
 
@@ -19,6 +20,7 @@
         "text": "Nie je žiadnym tajomstvom, že Alexandra Jankovičová je proste úžasná osoba. \n Ale ak vám to ale ešte nedošlo, dovoľte mi, aby som vám vysvetlil prečo...",
 
         "birthday": "Narodeniny",
+		"christmas": "Vianoce",
         "valentine": "Valentín",
         "anniversary": "Výročie"
     },
@@ -153,5 +155,9 @@
             "love": "Láskujem ťa!",
             "btw": "A ak by ťa to náhodou zaujímalo, tak s touto stránkou som ešte určite neskončil ;)"
         }
-    }
+    },
+
+	"ch2023": {
+		"message": "Dúfam, že si spokojná. Lepšie to nebude... Cmuk!"
+	}
 }

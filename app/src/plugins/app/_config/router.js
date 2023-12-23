@@ -18,12 +18,20 @@ const routes = [
 		path: '/:catchAll(.*)',
 		name: 'NotFound',
 	},
+
 	{
 		path: '/bd2023',
 		name: 'Bd2023',
 		component: () => import('@/plugins/app@alexandra/bd/alexandra-bd-2023.vue'),
 		meta: { requiresAuth: true },
 	},
+
+	{
+		path: '/ch2023',
+		name: 'Ch2023',
+		component: () => import('@/plugins/app@alexandra/ch/alexandra-ch-2023.vue'),
+		meta: { requiresAuth: true },
+	}
 ]
 
 const router = createRouter({
