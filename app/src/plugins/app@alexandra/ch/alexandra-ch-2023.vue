@@ -68,7 +68,7 @@ export default {
                 myConfetti({
                     particleCount: 4000,
                     startVelocity: 275,
-                    spread: 45,
+                    spread: 75,
                     origin: {
                         y: 3
                     },
@@ -78,7 +78,7 @@ export default {
                 myConfetti({
                     particleCount: 100,
                     startVelocity: 275,
-                    spread: 45,
+                    spread: 75,
                     origin: {
                         y: 3
                     },
