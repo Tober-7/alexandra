@@ -4,28 +4,28 @@
             <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-[12px] lg:text-[14px] xl:text-2xl">{{ $t("home.valentine") }} - 2024</span>
         </div>
     </div>
-    <div class="flex h-full">
-        <div class="flex flex-col justify-center items-center w-full h-full">
-            <div ref="container" class="pointer-events-none absolute w-[80%] h-[60%]"></div>
-            <template v-if="isSwitch">
-                <span class="text-font text-center text-light-500 text-[14px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-4xl transition" :class="[isFinal ? 'opacity-100' : 'opacity-0']">{{ $t("va2024.final") }}</span>
-            </template>
-            <template v-else>
-                <span ref="title" class="text-font text-center text-light-500 text-[16px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-4xl" :class="[clicked ? 'opacity-0' : 'opacity-100']">{{ $t("va2024.question") }}</span>
-    
-                <hr ref="line" class="my-4 sm:my-5 md:my-7 lg:my-9 xl:my-11 w-[280px] sm:w-[480px] md:w-[560px] lg:w-[640px] xl:w-[720px] border-l border-grey-1000" :class="[clicked ? 'opacity-0' : 'opacity-100']">
-    
-                <div class="flex justify-center items-center w-full">
-                    <button ref="yes_button" @click="finish()" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl sm:hover:text-red-600 transition" :class="[clicked ? 'opacity-0' : 'opacity-100']">{{ $t("va2024.yes") }}</button>
-                    <hr class="mx-2 sm:mx-3 md:mx-4 lg:mx-5 xl:mx-6">
-                    <button ref="hidden_button" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl opacity-0 pointer-events-none">{{ $t("va2024.no") }}</button>
-                </div>
+    <div class="flex flex-col justify-center items-center w-full h-full">
+        <div ref="container" class="pointer-events-none absolute w-[80%] h-[60%]"></div>
 
-                <button ref="moving_button" @click="move" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl sm:hover:text-red-600 opacity-0 transition">{{ $t("va2024.no") }}</button>
-            </template>
-        </div>
-        <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
+        <template v-if="isSwitch">
+            <span class="text-font text-center text-light-500 text-[14px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-4xl transition" :class="[isFinal ? 'opacity-100' : 'opacity-0']">{{ $t("va2024.final") }}</span>
+        </template>
+        
+        <template v-else>
+            <span ref="title" class="text-font text-center text-light-500 text-[16px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-4xl" :class="[clicked ? 'opacity-0' : 'opacity-100']">{{ $t("va2024.question") }}</span>
+
+            <hr ref="line" class="my-4 sm:my-5 md:my-7 lg:my-9 xl:my-11 w-[280px] sm:w-[480px] md:w-[560px] lg:w-[640px] xl:w-[720px] border-l border-grey-1000" :class="[clicked ? 'opacity-0' : 'opacity-100']">
+
+            <div class="flex justify-center items-center w-full">
+                <button ref="yes_button" @click="finish()" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl sm:hover:text-red-600 transition" :class="[clicked ? 'opacity-0' : 'opacity-100']">{{ $t("va2024.yes") }}</button>
+                <hr class="mx-2 sm:mx-3 md:mx-4 lg:mx-5 xl:mx-6">
+                <button ref="hidden_button" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl opacity-0 pointer-events-none">{{ $t("va2024.no") }}</button>
+            </div>
+
+            <button ref="moving_button" @click="move" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl sm:hover:text-red-600 opacity-0 transition">{{ $t("va2024.no") }}</button>
+        </template>
     </div>
+    <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
 </template>
 
 <script>

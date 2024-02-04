@@ -1,5 +1,5 @@
 <template>
-    <div class="flex bg-dark-500">
+    <div class="flex bg-dark-500 z-[100]">
         <div class="flex justify-between items-center relative w-full h-[46px] sm:h-[60px] md:h-[63px] lg:h-[66px] xl:h-[69px] px-[24px] sm:px-[32px] md:px-[34px] lg:px-[36px] xl:px-[38px] bg-dark-600 shadow-bottom z-[100] rounded-b-2xl border-b border-dark-200">
             <div class="flex items-center h-full">
                 <button @click="pushRoute('Home')">

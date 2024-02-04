@@ -4,21 +4,17 @@
             <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.christmas") }} - 2023</span>
         </div>
     </div>
-    <div class="flex h-full">
-        <div class="flex w-full h-full justify-center items-center">
-            <div class="flex justify-center items-center w-full h-full">
-                <button @click="open()" class="gift flex" :class="[!opened ? 'swing' : '']">
-                    <img src="@/assets/images/ch/general/gift/Gift_Top.png" class="gift-top absolute" :class="[opened ? 'moved' : '']">
-                    <img src="@/assets/images/ch/general/gift/Gift_Base.png" class="gift-base absolute" :class="[opened ? 'moved' : '']">
-                </button>
-                <img src="@/assets/images/ch/2023/Ja.jpg" class="gift-content absolute rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200" :class="[opened ? 'open' : '']">
-                <span class="message absolute text-font text-center text-light-500 text-[8px] sm:text-[10px] md:text-xs lg:text-[14px] xl:text-[16px]" :class="[opened ? 'open' : '']">{{ $t("ch2023.message") }}</span>
-                <img src="@/assets/images/ch/2023/hands.png" class="giving hands absolute w-[50px] sm:w-[65px] md:w-[85px] lg:w-[105px] xl:w-[125px]" :class="[opened ? 'open' : '']">
-                <img src="@/assets/images/ch/2023/heart.svg" class="giving heart absolute w-[30px] sm:w-[40px] md:w-[55px] lg:w-[70px] xl:w-[85px]" :class="[opened ? 'open' : '']">
-            </div>
-        </div>
-        <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
+    <div class="flex justify-center items-center w-full h-full">
+        <button @click="open()" class="gift flex" :class="[!opened ? 'swing' : '']">
+            <img src="@/assets/images/ch/general/gift/Gift_Top.png" class="gift-top absolute" :class="[opened ? 'moved' : '']">
+            <img src="@/assets/images/ch/general/gift/Gift_Base.png" class="gift-base absolute" :class="[opened ? 'moved' : '']">
+        </button>
+        <img src="@/assets/images/ch/2023/Ja.jpg" class="gift-content absolute rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200" :class="[opened ? 'open' : '']">
+        <span class="message absolute text-font text-center text-light-500 text-[8px] sm:text-[10px] md:text-xs lg:text-[14px] xl:text-[16px]" :class="[opened ? 'open' : '']">{{ $t("ch2023.message") }}</span>
+        <img src="@/assets/images/ch/2023/hands.png" class="giving hands absolute w-[50px] sm:w-[65px] md:w-[85px] lg:w-[105px] xl:w-[125px]" :class="[opened ? 'open' : '']">
+        <img src="@/assets/images/ch/2023/heart.svg" class="giving heart absolute w-[30px] sm:w-[40px] md:w-[55px] lg:w-[70px] xl:w-[85px]" :class="[opened ? 'open' : '']">
     </div>
+    <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
 </template>
 
 <script>
