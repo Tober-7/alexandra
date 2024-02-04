@@ -33,6 +33,18 @@
                     <span class="text-font text-light-500 text-[10px] sm:text-[12px] md:text-[15px] lg:text-[18px] xl:text-xl">{{ $t("home.christmas") }}</span>
                 </button>
             </div>
+            <hr class="my-[6px] sm:my-[10px] md:my-[12px] lg:my-[14px] xl:my-4">
+            <div class="flex w-full justify-end">
+                <span class="px-[8px] py-[4px] sm:px-[10px] sm:py-[5px] md:px-[12px] md:py-[6px] lg:px-[14px] lg:py-[7px] xl:px-4 xl:py-3 bg-dark-500 rounded-lg sm:rounded-xl shadow-around-sm xl:shadow-around-xl border border-dark-200 text-font text-light-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">2024</span>
+            </div>
+            <hr class="my-[6px] sm:my-[10px] md:my-[12px] lg:my-[14px] xl:my-4">
+            <div class="flex justify-end items-center flex-wrap gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full">
+                <button @click="pushRoute('Va2024')" class="p-2 sm:p-[10px] md:p-[12px] lg:p-[14px] xl:p-4 bg-dark-500 rounded-lg sm:rounded-xl shadow-around-sm xl:shadow-around-xl border border-dark-200 sm:hover:border-red-600 transition">
+                    <img src="@/assets/images/ch/2023/thumbnail.png" class="w-[70px] h-[70px] sm:w-[115px] sm:h-[115px] md:w-[160px] md:h-[160px] lg:w-[205px] lg:h-[205px] xl:w-[250px] xl:h-[250px] rounded-xl object-cover shadow-around-sm xl:shadow-around-xl border-2 sm:border-4 border-dark-200">
+                    <hr class="my-[1px] sm:my-[2px] md:my-[4px] lg:my-[6px] xl:my-[8px] border-none">
+                    <span class="text-font text-light-500 text-[10px] sm:text-[12px] md:text-[15px] lg:text-[18px] xl:text-xl">{{ $t("home.valentine") }}</span>
+                </button>
+            </div>
         </div>
     </div>
 </template>

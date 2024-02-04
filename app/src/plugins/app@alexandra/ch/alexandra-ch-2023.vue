@@ -1,27 +1,27 @@
 <template>
     <div class="flex bg-dark-600">
         <div class="flex justify-start items-center relative w-full px-[24px] sm:px-[32px] md:px-[34px] lg:px-[36px] xl:px-[38px] bg-dark-500 shadow-bottom z-[99] rounded-b-2xl border-b border-dark-200">
-            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.christmas") }} - {{ year }}</span>
+            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.christmas") }} - 2023</span>
         </div>
     </div>
     <div class="flex h-full">
-        <div class="flex justify-center items-center w-full h-full">
-            <button @click="open()" class="gift flex" :class="[!opened ? 'swing' : '']">
-                <img src="@/assets/images/ch/general/gift/Gift_Top.png" class="gift-top absolute" :class="[opened ? 'moved' : '']">
-                <img src="@/assets/images/ch/general/gift/Gift_Base.png" class="gift-base absolute" :class="[opened ? 'moved' : '']">
-            </button>
-            <img src="@/assets/images/ch/2023/Ja.jpg" class="gift-content absolute rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200" :class="[opened ? 'open' : '']">
-            <span class="message absolute text-font text-center text-light-500 text-[8px] sm:text-[10px] md:text-xs lg:text-[14px] xl:text-[16px]" :class="[opened ? 'open' : '']">{{ $t("ch2023.message") }}</span>
-            <img src="@/assets/images/ch/2023/hands.png" class="giving hands absolute w-[50px] sm:w-[65px] md:w-[85px] lg:w-[105px] xl:w-[125px]" :class="[opened ? 'open' : '']">
-            <img src="@/assets/images/ch/2023/heart.svg" class="giving heart absolute w-[30px] sm:w-[40px] md:w-[55px] lg:w-[70px] xl:w-[85px]" :class="[opened ? 'open' : '']">
+        <div class="flex w-full h-full justify-center items-center">
+            <div class="flex justify-center items-center w-full h-full">
+                <button @click="open()" class="gift flex" :class="[!opened ? 'swing' : '']">
+                    <img src="@/assets/images/ch/general/gift/Gift_Top.png" class="gift-top absolute" :class="[opened ? 'moved' : '']">
+                    <img src="@/assets/images/ch/general/gift/Gift_Base.png" class="gift-base absolute" :class="[opened ? 'moved' : '']">
+                </button>
+                <img src="@/assets/images/ch/2023/Ja.jpg" class="gift-content absolute rounded-[15px] sm:rounded-[20px] xl:rounded-[25px] object-cover shadow-around-sm xl:shadow-around-xl border sm:border-[3px] border-dark-200" :class="[opened ? 'open' : '']">
+                <span class="message absolute text-font text-center text-light-500 text-[8px] sm:text-[10px] md:text-xs lg:text-[14px] xl:text-[16px]" :class="[opened ? 'open' : '']">{{ $t("ch2023.message") }}</span>
+                <img src="@/assets/images/ch/2023/hands.png" class="giving hands absolute w-[50px] sm:w-[65px] md:w-[85px] lg:w-[105px] xl:w-[125px]" :class="[opened ? 'open' : '']">
+                <img src="@/assets/images/ch/2023/heart.svg" class="giving heart absolute w-[30px] sm:w-[40px] md:w-[55px] lg:w-[70px] xl:w-[85px]" :class="[opened ? 'open' : '']">
+            </div>
         </div>
+        <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
     </div>
-    <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
 </template>
 
 <script>
-import sk from "@/plugins/app/_locales/sk.json"
-
 import confetti from "canvas-confetti"    
 
 export default {
@@ -33,24 +33,12 @@ export default {
         this.confettiCanvas = this.$refs["confettiCanvas"];
     },
 
-    computed: {
-        t() {
-            return sk;
-        }
-    },
-
     data() {
         return {
-            year: '',
-
             opened: false,
 
             confettiCanvas: null,
         }
-    },
-
-    created() {
-        this.year = this.$route.path.slice(-4);
     },
 
     methods: {

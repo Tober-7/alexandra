@@ -31,6 +31,13 @@ const routes = [
 		name: 'Ch2023',
 		component: () => import('@/plugins/app@alexandra/ch/alexandra-ch-2023.vue'),
 		meta: { requiresAuth: true },
+	},
+
+	{
+		path: '/va2024',
+		name: 'Va2024',
+		component: () => import('@/plugins/app@alexandra/va/alexandra-va-2024.vue'),
+		meta: { requiresAuth: true },
 	}
 ]
 

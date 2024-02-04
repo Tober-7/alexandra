@@ -26,10 +26,20 @@
                             <button @click="pushRoute('Ch2023')" class="text-font text-light-500 hover:text-red-600 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px] transition">2023</button>
                         </div>
                     </span>
+
+                    <div class="mx-4"></div>
+                    <div class="w-2 h-2 border border-grey-500 rounded-full"></div>
+                    <div class="mx-4"></div>
+    
+                    <span id="header-category--3" class="header-category flex h-full items-center relative text-font text-light-500 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px]">{{ $t("header.valentines") }}
+                        <div id="header-categories--3" class="header-categories-list flex flex-col justify-start items-center absolute left-[0] top-[100%] w-full h-auto px-5 py-4 opacity-0 hover:opacity-100 rounded-b-2xl border-b border-l border-r border-dark-200 bg-dark-600 transition">
+                            <button @click="pushRoute('Va2024')" class="text-font text-light-500 hover:text-red-600 sm:text-xs md:text-[13px] lg:text-sm xl:text-[15px] transition">2024</button>
+                        </div>
+                    </span>
                 </template>
             </div>
             <div class="flex items-center h-full">
-                <button @click="secret(0.75, $t('header.secretHidden'), $event)" class="text-font text-light-500 hover:text-light-500 sm:hover:text-red-600 text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] transition">{{ $t("header.secretHidden") }}</button>
+                <button @click="secret(0.75, $t('header.secretHidden'), $event)" class="text-font text-light-500 sm:hover:text-red-600 text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] transition">{{ $t("header.secretHidden") }}</button>
             </div>
         </div>
     </div>
@@ -46,16 +56,16 @@ export default {
     },
 
     created() {
-        window.addEventListener("resize", this.myEventHandler);
+        window.addEventListener("resize", this.onResize);
 
         this.checkScreenSize();
     },
     unmounted() {
-        window.removeEventListener("resize", this.myEventHandler);
+        window.removeEventListener("resize", this.onResize);
     },
 
     methods: {
-        myEventHandler() {
+        onResize() {
             this.checkScreenSize();
         },
         checkScreenSize() {
@@ -110,6 +120,13 @@ export default {
 
   opacity: 1;
 }
+
+#header-category--3:hover #header-categories--3{
+  pointer-events: all;
+
+  opacity: 1;
+}
+
 /*#endregion*/
 
 </style>

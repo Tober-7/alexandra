@@ -1,7 +1,7 @@
 <template>
     <div class="flex bg-dark-300">
         <div class="flex justify-start items-center relative w-full px-[24px] sm:px-[32px] md:px-[34px] lg:px-[36px] xl:px-[38px] bg-dark-500 shadow-bottom z-[99] rounded-b-2xl border-b border-dark-200">
-            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.birthday") }} - {{ year }}</span>
+            <span class="py-3 text-font text-light-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl">{{ $t("home.birthday") }} - 2023</span>
         </div>
     </div>
     <div class="flex bg-dark-600">
@@ -210,7 +210,7 @@
 <script>
 import Helpers from "@/plugins/uni@helpers/helpers"
 
-import sk from "@/plugins/app/_locales/sk.json"
+import exampleLocale from "@/plugins/app/_locales/sk.json"
 
 export default {
     emits: ['setIsAuth'],
@@ -221,23 +221,13 @@ export default {
 
     computed: {
         t() {
-            return sk;
+            return exampleLocale;
         }
-    },
-
-    data() {
-        return {
-            year: '',
-        }
-    },
-
-    created() {
-        this.year = this.$route.path.slice(-4);
     },
 
     methods: {
         scroll(target) {
-            Helpers.scroll(this.$refs, target)
+            Helpers.scroll(this.$refs, target);
 		},
         splitLines(text) {
             return Helpers.splitLines(text);

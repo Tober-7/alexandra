@@ -159,5 +159,12 @@
 
 	"ch2023": {
 		"message": "Dúfam, že si spokojná. Lepšie to nebude... Cmuk!"
+	},
+
+	"va2024": {
+		"question": "Will you be my Valentine?",
+		"yes": "Áno! Určite! Jednoznačne! na 100%!",
+		"no": "nie",
+		"final": "Ja som vedel, že si vyberieš správne..."
 	}
 }
