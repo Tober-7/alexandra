@@ -22,7 +22,7 @@
                 <button ref="hidden_button" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl opacity-0 pointer-events-none">{{ $t("va2024.no") }}</button>
             </div>
 
-            <button ref="moving_button" @mouseover="move" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl opacity-0 transition">{{ $t("va2024.no") }}</button>
+            <button ref="moving_button" @mouseover="move" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl cursor-default opacity-0 transition">{{ $t("va2024.no") }}</button>
         </template>
     </div>
     <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
@@ -66,6 +66,8 @@ export default {
 
             confettiCanvas: null,
 
+            button_speed: 0.01,
+
             container: null,
 
             title: null,
@@ -74,6 +76,8 @@ export default {
 
             hidden_button: null,
             moving_button: null,
+
+            currentTimeout: null,
         }
     },
 
@@ -118,7 +122,7 @@ export default {
         },
 
         setUpMovingButton() {
-            if (!this.equalPos(this.moving_button, this.hidden_button)) {
+            if (!this.equalPos(this.moving_button, this.hidden_button.getBoundingClientRect())) {
                 this.moving_button.style.opacity = 0;
                 
                 this.place(this.moving_button, this.hidden_button.getBoundingClientRect());
@@ -132,7 +136,7 @@ export default {
         },
         
         equalPos(el, target) {
-            return el.getBoundingClientRect().x == target.getBoundingClientRect().x && el.getBoundingClientRect().y == target.getBoundingClientRect().y
+            return el.getBoundingClientRect().x == target.x && el.getBoundingClientRect().y == target.y
         },
 
         getRandomPosInElement(el) {
@@ -162,6 +166,11 @@ export default {
         },
 
         move(e) {
+            if (this.currentTimeout) {
+                clearTimeout(this.currentTimeout);
+                this.currentTimeout = null;
+            }
+
             e.target.style.opacity = 0;
 
             const oldPos = e.target.getBoundingClientRect();
@@ -169,10 +178,48 @@ export default {
             this.place(e.target, this.getRandomPosInElement(this.container));
 
             if (this.isOverlapping(e.target, this.title) || this.isOverlapping(e.target, this.line) || this.isOverlapping(e.target, this.yes_button || this.isOverlapping(e.target, oldPos))) {
+                this.place(e.target, oldPos);
+
                 this.move(e)
             } else {
+                const newPos = e.target.getBoundingClientRect();
+                
+                this.place(e.target, oldPos);
+                
                 e.target.style.opacity = 1;
+
+                this.moveTowards(e.target, newPos);
             }
+        },
+
+        moveTowards(el, target) {
+            const left = parseInt(window.getComputedStyle(el, null).getPropertyValue('left'), 10);
+            const top = parseInt(window.getComputedStyle(el, null).getPropertyValue('top'), 10);
+
+            const config = {
+                left: left,
+                top: top,
+                dx: left - target.x,
+                dy: top - target.y,
+                i: 1,
+                count: 20,
+                delay: 1
+            };
+            
+            this.loop(el, target, config);
+        },
+
+        loop(el, target, config) {
+            if (config.i >= config.count) return;
+
+            config.i++;
+
+            el.style.left = (config.left - (config.dx * config.i / config.count)).toFixed(0) + 'px';
+            el.style.top = (config.top - (config.dy * config.i / config.count)).toFixed(0) + 'px';
+
+            this.currentTimeout = setTimeout(function() {
+                this.loop(el, target, config);
+            }.bind(this), config.delay);
         }
     }
 }
