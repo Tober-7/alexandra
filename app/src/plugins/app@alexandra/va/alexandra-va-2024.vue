@@ -22,7 +22,7 @@
                 <button ref="hidden_button" class="px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl opacity-0 pointer-events-none">{{ $t("va2024.no") }}</button>
             </div>
 
-            <button ref="moving_button" @mouseover="move" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl cursor-default opacity-0 transition">{{ $t("va2024.no") }}</button>
+            <button ref="moving_button" @click="click" @mouseover="hover" class="absolute px-[10px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-5 py-[6px] sm:py-[9px] md:py-[10px] lg:py-[11px] xl:py-3 bg-dark-400 rounded-lg sm:rounded-[9px] md:rounded-[10px] lg:rounded-[11px] xl:rounded-xl border border-grey-1000 text-font text-center text-light-500 text-[8px] sm:text-[12px] md:text-base lg:text-lg xl:text-xl cursor-default opacity-0 transition">{{ $t("va2024.no") }}</button>
         </template>
     </div>
     <canvas ref="confettiCanvas" class="pointer-events-none absolute w-full h-full"></canvas>
@@ -36,6 +36,8 @@ export default {
 
     created() {
         window.addEventListener("resize", this.onResize);
+
+        this.checkScreenSize();
     },
     unmounted() {
         window.removeEventListener("resize", this.onResize);
@@ -60,6 +62,8 @@ export default {
     
     data() {
         return {
+            isSmallScreen: false,
+
             clicked: false,
             isSwitch: false,
             isFinal: false,
@@ -83,7 +87,11 @@ export default {
 
     methods: {
         onResize() {
+            this.checkScreenSize();
             this.setUpMovingButton();
+        },
+        checkScreenSize() {
+            this.isSmallScreen = window.innerWidth < 640;
         },
 
         finish() {
@@ -165,6 +173,12 @@ export default {
             el.style.top = target.y + 'px';
         },
 
+        click(e) {
+            if (this.isSmallScreen) this.move(e);
+        },
+        hover(e) {
+            if (!this.isSmallScreen) this.move(e);
+        },
         move(e) {
             if (this.currentTimeout) {
                 clearTimeout(this.currentTimeout);
